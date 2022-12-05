@@ -27,7 +27,7 @@ app.post('/signup', async (req, res) => {
 });
 
 // /api/emp/employees
-app.get('/employees', async (req, res) => {
+app.get('/employee', async (req, res) => {
     try {
         const emp = await empModel.find()
         res.status(201).send(emp)
@@ -36,8 +36,8 @@ app.get('/employees', async (req, res) => {
     }
 });
 
-// /api/emp/employees
-// app.post('/employees', async (req, res) => {
+// /api/emp/employee
+// app.post('/employee', async (req, res) => {
 //     const newEmp = new empModel(req.body)
 //     try {
 //         await newEmp.save()
@@ -47,8 +47,8 @@ app.get('/employees', async (req, res) => {
 //     }
 // });
 
-// /api/emp/employees/{eid}
-app.get('/employees/', async (req, res) => {
+// /api/emp/employee/{eid}
+app.get('/employee/', async (req, res) => {
     const emp_id = req.params.eid
     try {
         await empModel.find()
@@ -59,7 +59,7 @@ app.get('/employees/', async (req, res) => {
 });
 
 // /api/emp/employees/{eid}
-app.get('/employees/:eid', async (req, res) => {
+app.get('/employee/:eid', async (req, res) => {
     const emp_id = req.params.eid
     try {
         await empModel.find()
@@ -69,7 +69,7 @@ app.get('/employees/:eid', async (req, res) => {
     }
 });
 
-// /api/emp/employees/{eid}
+// /api/emp/employee/{eid}
 app.put('/employees/:eid', async (req, res) => {
     const emp_id = req.params.eid
     try {
@@ -81,7 +81,7 @@ app.put('/employees/:eid', async (req, res) => {
 });
 
 
-// /api/emp/employees?eid=xxx
+// /api/emp/employee?eid=xxx
 app.delete('/employees', (req, res) => {
     const emp_id = req.query.eid
     try {
@@ -100,6 +100,6 @@ module.exports = app
 // {
 //     "first_name": "Tam",
 //     "last_name": "Harrow",
-//     "email": "tam@hollywood.com",
-//     "gender": "Male"
+//     "email": "tam@abc.com",
+//     "password": "123"
 // }
