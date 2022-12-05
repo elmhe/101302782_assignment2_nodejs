@@ -23,7 +23,7 @@ mongoose.connect(DB_URL, {
     process.exit();
 });
 
-app.use("/api/emp", empRoutes)
+app.use("/emp", empRoutes)
 
 app.get('/', (req, res) => {
     res.send("<h1>Welcome to Assignment 02</h1>");

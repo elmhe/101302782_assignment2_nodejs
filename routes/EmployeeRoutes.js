@@ -13,7 +13,7 @@ app.post('/login', async (req, res) => {
     
 });
 
-// /api/emp/signup
+// /api/emp/register
 app.post('/signup', async (req, res) => {
 
     const newEmp = new empModel(req.body);
@@ -82,10 +82,10 @@ app.put('/employees/:eid', async (req, res) => {
 
 
 // /api/emp/employee?eid=xxx
-app.delete('/employees', (req, res) => {
+app.delete('/employee', (req, res) => {
     const emp_id = req.query.eid
     try {
-        const deleteEmp = empModel.findByIdAndDelete(req.params.emp_id)
+        const deleteEmp = empModel.findByIdAndDelete(emp_id, req.body)
         if(!deleteEmp){
             res.status(500).send(error)
         }
